@@ -41,10 +41,6 @@ class RegisterFragment : Fragment() {
 
         setObservers()
         addListeners()
-
-        binding.btnLogin.setOnClickListener {
-            findNavController().navigateUp()
-        }
     }
 
     override fun onDestroyView() {
@@ -64,11 +60,8 @@ class RegisterFragment : Fragment() {
                         progressBar.isVisible = false
                     }
 
-                    Toast.makeText(
-                        requireActivity(),
-                        "Registration Succeed!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    // On registration success, navigate the user to the home page
+                    navigateToHome()
                 }
 
                 Result.Status.ERROR -> {
@@ -110,7 +103,7 @@ class RegisterFragment : Fragment() {
                 }
             }
 
-            binding.btnLogin.setOnClickListener {
+            btnLogin.setOnClickListener {
                 findNavController().navigateUp()
             }
         }
@@ -157,5 +150,9 @@ class RegisterFragment : Fragment() {
         }
 
         return isInputValid
+    }
+
+    private fun navigateToHome() {
+        findNavController().navigate(R.id.navigate_to_home)
     }
 }

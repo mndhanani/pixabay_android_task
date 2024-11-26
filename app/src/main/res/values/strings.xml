@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Pixabay Android Task</string>
     <string name="or">or</string>
+    <string name="by">by</string>
+    <string name="error_unknown">Something went wrong.</string>
 
     <!-- Auth -->
     <string name="title_login">Login</string>
@@ -20,4 +22,11 @@
     <string name="error_invalid_age">Age must be between 18 and 99 years</string>
     <string name="error_login_failed">Login failed.</string>
     <string name="error_register_failed">Registration failed.</string>
+
+    <!-- Pixabay Images - Home and Details -->
+    <string name="title_home">Home</string>
+    <string name="title_details">Details</string>
+    <string name="label_size">Size:</string>
+    <string name="label_type">Type:</string>
+    <string name="label_tags">Tags:</string>
 </resources>
