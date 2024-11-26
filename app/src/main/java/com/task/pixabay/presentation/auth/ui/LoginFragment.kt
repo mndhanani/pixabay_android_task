@@ -41,7 +41,6 @@ class LoginFragment : Fragment() {
 
         setObservers()
         addListeners()
-
     }
 
     override fun onDestroyView() {

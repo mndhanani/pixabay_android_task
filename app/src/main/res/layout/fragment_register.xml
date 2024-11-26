@@ -73,5 +73,12 @@
             android:layout_marginTop="@dimen/margin_small"
             android:text="@string/action_login_" />
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:visibility="gone" />
+
     </LinearLayout>
 </layout>
