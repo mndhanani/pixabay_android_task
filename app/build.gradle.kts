@@ -30,7 +30,7 @@ android {
     }
 
     // Enable data binding
-    viewBinding {
+    dataBinding {
         enable = true
     }
 
@@ -63,6 +63,10 @@ dependencies {
 
     // Data Binding for XML and UI binding
     implementation(libs.databinding.runtime)
+
+    // Navigation Component
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
