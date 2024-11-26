@@ -18,6 +18,19 @@ class MainActivity : AppCompatActivity() {
         // Set up the Navigation Controller
         navController = findNavController(R.id.nav_host_fragment)
         setupActionBarWithNavController(navController)
+
+        // Set the ActionBar title based on the current fragment
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.login_fragment -> {
+                    supportActionBar?.title = getString(R.string.title_login)
+                }
+
+                R.id.register_fragment -> {
+                    supportActionBar?.title = getString(R.string.title_register)
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

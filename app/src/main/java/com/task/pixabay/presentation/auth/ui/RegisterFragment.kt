@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.task.pixabay.databinding.FragmentRegisterBinding
+import com.task.pixabay.presentation.auth.viewmodel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
 
     // Use View Binding to reference layout elements
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,6 +25,10 @@ class RegisterFragment : Fragment() {
     ): View {
         // Inflate the layout using View Binding
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+
+        binding.viewModel = viewModel // Bind ViewModel
+        binding.lifecycleOwner = viewLifecycleOwner // Set lifecycle owner
+
         return binding.root
     }
 
