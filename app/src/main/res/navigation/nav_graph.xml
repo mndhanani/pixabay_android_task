@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/login_fragment">
 
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.task.pixabay.presentation.auth.ui.LoginFragment"
-        android:label="LoginFragment">
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/navigate_to_register"
             app:destination="@id/register_fragment" />
@@ -16,5 +18,36 @@
     <fragment
         android:id="@+id/register_fragment"
         android:name="com.task.pixabay.presentation.auth.ui.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.task.pixabay.presentation.main.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/navigate_to_details"
+            app:destination="@id/details_fragment">
+            <argument
+                android:name="selectedItem"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.task.pixabay.presentation.main.ui.DetailsFragment"
+        android:label="@string/title_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="selectedItem"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/navigate_to_home"
+        app:destination="@id/home_fragment"
+        app:popUpTo="@id/login_fragment"
+        app:popUpToInclusive="true" />
 </navigation>

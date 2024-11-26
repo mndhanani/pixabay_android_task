@@ -20,4 +20,8 @@
     <string name="error_invalid_age">Age must be between 18 and 99 years</string>
     <string name="error_login_failed">Login failed.</string>
     <string name="error_register_failed">Registration failed.</string>
+
+    <!-- Pixabay Images - Home and Details -->
+    <string name="title_home">Home</string>
+    <string name="title_details">Details</string>
 </resources>

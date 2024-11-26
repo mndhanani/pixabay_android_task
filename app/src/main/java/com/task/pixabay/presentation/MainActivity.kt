@@ -21,15 +21,16 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment)
         setupActionBarWithNavController(navController)
 
-        // Set the ActionBar title based on the current fragment
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.login_fragment -> {
-                    supportActionBar?.title = getString(R.string.title_login)
+                R.id.home_fragment -> {
+                    // Hide back button on Home Fragment
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 }
 
-                R.id.register_fragment -> {
-                    supportActionBar?.title = getString(R.string.title_register)
+                else -> {
+                    // Show back button on other fragments
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }
         }

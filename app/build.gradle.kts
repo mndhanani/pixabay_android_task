@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.dagger.hilt.android)
+
+    // Gradle plugin for passing arguments using Navigation component
+    alias(libs.plugins.navigation.safeargs)
 }
 
 android {

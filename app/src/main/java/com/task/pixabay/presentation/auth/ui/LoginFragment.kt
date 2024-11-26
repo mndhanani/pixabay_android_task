@@ -60,11 +60,8 @@ class LoginFragment : Fragment() {
                         progressBar.isVisible = false
                     }
 
-                    Toast.makeText(
-                        requireActivity(),
-                        "Login Succeed!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    // On login success, navigate the user to the home page
+                    navigateToHome()
                 }
 
                 Result.Status.ERROR -> {
@@ -106,7 +103,7 @@ class LoginFragment : Fragment() {
             }
 
             btnRegister.setOnClickListener {
-                findNavController().navigate(R.id.navigate_to_register)
+                navigateToRegister()
             }
         }
     }
@@ -141,5 +138,13 @@ class LoginFragment : Fragment() {
         }
 
         return isInputValid
+    }
+
+    private fun navigateToRegister() {
+        findNavController().navigate(R.id.navigate_to_register)
+    }
+
+    private fun navigateToHome() {
+        findNavController().navigate(R.id.navigate_to_home)
     }
 }
