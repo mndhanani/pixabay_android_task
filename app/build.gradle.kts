@@ -98,6 +98,8 @@ dependencies {
     // Retrofit for network calls
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 
     // Paging 3
     implementation(libs.paging.runtime)

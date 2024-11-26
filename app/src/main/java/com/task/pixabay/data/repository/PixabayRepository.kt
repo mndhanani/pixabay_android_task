@@ -26,10 +26,12 @@ class PixabayRepository @Inject constructor(private val apiService: PixabayApiSe
             val page = params.key ?: 1
             return try {
                 val response = apiService.getImages(
-                    key = BuildConfig.API_KEY
-                ).execute()
+                    apiKey = BuildConfig.API_KEY,
+                    perPage = params.loadSize,
+                    page = page
+                )
 
-                val images = response.body()?.hits ?: emptyList()
+                val images = response.hits
 
                 LoadResult.Page(
                     data = images,

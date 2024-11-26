@@ -22,6 +22,7 @@ class PixabayUseCase @Inject constructor(private val repository: PixabayReposito
         return Pager(
             config = PagingConfig(
                 pageSize = 20, // Number of items per page
+                initialLoadSize = 20,
                 enablePlaceholders = false
             ),
             pagingSourceFactory = { repository.getPixabayImages() }

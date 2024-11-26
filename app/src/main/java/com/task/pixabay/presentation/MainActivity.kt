@@ -23,11 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.home_fragment -> {
+                R.id.login_fragment, R.id.home_fragment -> {
                     // Hide back button on Home Fragment
                     supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 }
-
                 else -> {
                     // Show back button on other fragments
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -2,6 +2,7 @@
     <string name="app_name">Pixabay Android Task</string>
     <string name="or">or</string>
     <string name="by">by</string>
+    <string name="error_unknown">Something went wrong.</string>
 
     <!-- Auth -->
     <string name="title_login">Login</string>

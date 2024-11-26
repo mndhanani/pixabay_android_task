@@ -37,7 +37,7 @@ object BindingAdapters {
      */
     @BindingAdapter("type")
     @JvmStatic
-    fun bindType(textView: AppCompatTextView, type: String?) {
+    fun bindImageType(textView: AppCompatTextView, type: String?) {
         val prefix = textView.context.getString(R.string.label_type)
         textView.text = "$prefix ${type ?: "Unknown"}"
     }
@@ -47,7 +47,7 @@ object BindingAdapters {
      */
     @BindingAdapter("tags")
     @JvmStatic
-    fun bindTagsPrefix(textView: AppCompatTextView, tags: String?) {
+    fun bindImageTags(textView: AppCompatTextView, tags: String?) {
         val prefix = textView.context.getString(R.string.label_tags)
         textView.text = "$prefix ${tags ?: "No tags"}"
     }
