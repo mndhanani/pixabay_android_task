@@ -14,6 +14,8 @@ coroutines = "1.7.3"
 lifecycle = "2.8.7"
 databinding = "8.7.2"
 glide = "4.16.0"
+retrofit = "2.9.0"
+paging = "3.3.4"
 
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -46,6 +48,13 @@ navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", ver
 
 # Glide for image loading and caching
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+# Retrofit for network calls
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+# Paging 3
+paging-runtime = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
