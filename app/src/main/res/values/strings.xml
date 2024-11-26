@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Pixabay Android Task</string>
+    <string name="or">or</string>
+
+    <!-- Auth -->
+    <string name="title_login">Login</string>
+    <string name="title_register">Register</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_age">Age</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    <string name="action_login_">Login Instead</string>
+
+    <string name="error_email_required">Email is required</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_invalid_password">Password must be between 6 and 12 characters</string>
+    <string name="error_age_required">Age is required</string>
+    <string name="error_invalid_age">Age must be between 18 and 99 years</string>
+    <string name="error_login_failed">Login failed.</string>
+    <string name="error_register_failed">Registration failed.</string>
 </resources>
