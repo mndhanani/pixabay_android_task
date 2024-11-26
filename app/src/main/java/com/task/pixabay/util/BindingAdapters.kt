@@ -70,11 +70,9 @@ object BindingAdapters {
     @JvmStatic
     fun bindFormattedSize(textView: AppCompatTextView, size: Long?) {
         val prefix = textView.context.getString(R.string.label_size)
-        textView.text = prefix + " " + {
-            size?.let {
-                val sizeInMB = it / 1_000_000.0
-                String.format(Locale.US, "%.1f MB", sizeInMB)
-            } ?: "0.0 MB"
-        }
+        textView.text = size?.let {
+            val sizeInMB = it / 1_000_000.0
+            String.format(Locale.US, "$prefix %.1f MB", sizeInMB)
+        } ?: "$prefix 0.0 MB"
     }
 }

@@ -41,10 +41,6 @@ class RegisterFragment : Fragment() {
 
         setObservers()
         addListeners()
-
-        binding.btnLogin.setOnClickListener {
-            findNavController().navigateUp()
-        }
     }
 
     override fun onDestroyView() {
@@ -107,7 +103,7 @@ class RegisterFragment : Fragment() {
                 }
             }
 
-            binding.btnLogin.setOnClickListener {
+            btnLogin.setOnClickListener {
                 findNavController().navigateUp()
             }
         }
