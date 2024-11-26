@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.task.pixabay.presentation.auth.viewmodel.RegisterViewModel" />
-    </data>
+    <data />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/margin_large">
 
@@ -24,8 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress"
-                android:text="@={viewModel.email}" />
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -40,8 +35,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
-                android:maxLength="12"
-                android:text="@={viewModel.password}" />
+                android:maxLength="12" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,8 +50,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_age"
                 android:inputType="number"
-                android:maxLength="2"
-                android:text="@={viewModel.age}" />
+                android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -65,13 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:onClick="@{() -> viewModel.onRegisterClicked()}"
             android:text="@string/action_register" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_small"
             android:text="@string/or" />
 
