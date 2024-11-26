@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.task.pixabay.data.model.PixabayImage
 import com.task.pixabay.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -26,15 +27,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Set up RecyclerView with mock data
-        val items = listOf("Item 1", "Item 2", "Item 3") // Mocked items
-        val adapter = DataAdapter(items) { selectedItem ->
-            // Navigate to DetailedFragment, passing the selected item
-            navigateToDetails(selectedItem)
-        }
-
-        binding.rvData.adapter = adapter
     }
 
     override fun onDestroyView() {
@@ -43,8 +35,8 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun navigateToDetails(selectedItem: String) {
-        val action = HomeFragmentDirections.navigateToDetails(selectedItem)
+    private fun navigateToDetails(pixabayImage: PixabayImage) {
+        val action = HomeFragmentDirections.navigateToDetails(pixabayImage)
         findNavController().navigate(action)
     }
 }

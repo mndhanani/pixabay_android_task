@@ -30,8 +30,8 @@
             android:id="@+id/navigate_to_details"
             app:destination="@id/details_fragment">
             <argument
-                android:name="selectedItem"
-                app:argType="string" />
+                android:name="pixabayImage"
+                app:argType="com.task.pixabay.data.model.PixabayImage" />
         </action>
     </fragment>
 
@@ -41,8 +41,8 @@
         android:label="@string/title_details"
         tools:layout="@layout/fragment_details">
         <argument
-            android:name="selectedItem"
-            app:argType="string" />
+            android:name="pixabayImage"
+            app:argType="com.task.pixabay.data.model.PixabayImage" />
     </fragment>
 
     <action

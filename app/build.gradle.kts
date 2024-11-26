@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.kotlin.parcelize)
 
     // Gradle plugin for passing arguments using Navigation component
     alias(libs.plugins.navigation.safeargs)
@@ -70,6 +71,9 @@ dependencies {
     // Navigation Component
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
+    // Glide for image loading and caching
+    implementation(libs.glide)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

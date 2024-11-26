@@ -1,17 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data />
+    <data>
+
+        <variable
+            name="pixabayImage"
+            type="com.task.pixabay.data.model.PixabayImage" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_item"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{pixabayImage.largeImageURL}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_size"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="8dp"
+            app:formattedSize="@{pixabayImage.imageSize}"
+            tools:text="1.5 MB" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="4dp"
+            app:type="@{pixabayImage.type}"
+            tools:text="Photo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="4dp"
+            app:tags="@{pixabayImage.tags}"
+            tools:text="Fog, River, Swamp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_small">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    app:user="@{pixabayImage.user}"
+                    tools:text="by ChiemSeherin" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="6dp"
+                    app:drawableStartCompat="@drawable/ic_views"
+                    app:formattedNumber="@{pixabayImage.views}"
+                    tools:text="50" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="6dp"
+                    app:drawableStartCompat="@drawable/ic_likes"
+                    app:formattedNumber="@{pixabayImage.likes}"
+                    tools:text="50" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="6dp"
+                    app:drawableStartCompat="@drawable/ic_comments"
+                    app:formattedNumber="@{pixabayImage.comments}"
+                    tools:text="50" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_favorites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="6dp"
+                    app:drawableStartCompat="@drawable/ic_favorites"
+                    app:formattedNumber="@{pixabayImage.collections}"
+                    tools:text="50" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_downloads"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="6dp"
+                    app:drawableStartCompat="@drawable/ic_downloads"
+                    app:formattedNumber="@{pixabayImage.downloads}"
+                    tools:text="50" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
+
 </layout>

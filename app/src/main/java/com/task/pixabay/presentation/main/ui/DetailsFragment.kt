@@ -29,8 +29,6 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.tvItem.text = args.selectedItem
     }
 
     override fun onDestroyView() {
